@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: omnisync-relay-server
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /api/health
